@@ -1,5 +1,5 @@
 package junxiao.leetcode;
-import junxiao.leetcode.foo.Solution;
+import junxiao.leetcode.two_sum.Solution;
 import java.util.*;
 
 public class runLeetcode {
