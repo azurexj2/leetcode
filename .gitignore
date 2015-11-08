@@ -1,0 +1,17 @@
+*~
+build/
+out/
+generated/
+.project
+.classpath
+.settings/
+.gradle/
+*.iws
+*.ipr
+*.iml
+.idea/
+.DS_Store
+tools/local/
+build-eclipse/
+.metadata/
+**/bin
