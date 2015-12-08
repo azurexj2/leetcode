@@ -20,17 +20,17 @@ task wrapper(type: Wrapper) {
     gradleVersion = '2.7'
 }
 
-<<<<<<< HEAD
 task printingHello << {
     System.out.println "Hello..."
 }
 
 task printingMessage (dependsOn:printingHello) << {
     System.out.println "testing..."
-=======
+}
+
 jar {
     manifest {
         attributes 'Main-Class': 'junxiao.leetcode.runLeetcode'
     }
->>>>>>> 389c67e25e11243d43079ef4e9e34b6298341725
+
 }
