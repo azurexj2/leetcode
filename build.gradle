@@ -4,20 +4,33 @@ apply plugin: 'eclipse'
 
 mainClassName = 'junxiao.leetcode.runLeetcode'
 
+defaultTasks 'printingMessage'
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
     compile "joda-time:joda-time:2.2"
+    testCompile "junit:junit:4.12"
+    testCompile "org.mockito:mockito-core:1.+"
 }
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.7'
 }
 
+<<<<<<< HEAD
+task printingHello << {
+    System.out.println "Hello..."
+}
+
+task printingMessage (dependsOn:printingHello) << {
+    System.out.println "testing..."
+=======
 jar {
     manifest {
         attributes 'Main-Class': 'junxiao.leetcode.runLeetcode'
     }
+>>>>>>> 389c67e25e11243d43079ef4e9e34b6298341725
 }
