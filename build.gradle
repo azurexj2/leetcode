@@ -8,6 +8,7 @@ defaultTasks 'printingMessage'
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
