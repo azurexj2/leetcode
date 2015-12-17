@@ -24,12 +24,13 @@ fi
 
 now=`date --rfc-3339=seconds`
 
-l_name=`(sed 's/-/_/g') < <(echo $leetcode_name)`
-mkdir -p $l_name
+#l_name=`(sed 's/-/_/g') < <(echo $leetcode_name)`
+#mkdir -p $l_name
+mkdir -p $leetcode_name
 
 #true > $leetcode_name/index.md
 #for line in $TEMPLE; do echo $line >> $leetcode_name/index.md; done
-cat > $l_name/index.md <<EOL
+cat > $leetcode_name/index.md <<EOL
 ---
 layout: solution
 title: $title
@@ -40,6 +41,14 @@ leetcode_id: $leetcode_id
 EOL
 
 
-touch $l_name/README.md
-touch $l_name/Solution.java
-echo "package junxiao.leetcode.$l_name;" > $l_name/Solution.java
+touch $leetcode_name/README.md
+touch $leetcode_name/Solution.java
+
+cat > $leetcode_name/Solution.java <<EOL
+package junxiao.leetcode.$leetcode_name;
+
+import java.util.*;
+
+public class Solution {
+}
+EOL
