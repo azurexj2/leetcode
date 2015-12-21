@@ -26,7 +26,7 @@ if [ -z "$leetcode_id" ]; then
     exit
 fi
 
-now=`date --rfc-3339=seconds`
+now=`date`
 
 mkdir -p $l_name
 
