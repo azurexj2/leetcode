@@ -7,9 +7,13 @@ public class Solution {
 		if (s.length() <=1 ) return s;
 		int L = s.length();
 		boolean[][] F = new boolean[L][L];
+		int maxL = 1;
+		int begin = 0;
 		for (int i = L-1; i >=0; --i){
 			for (int j = i; j < L; ++j){
-				if (j-i <=1) F[i][j] = s.charAt(i)==s.charAt(j);
+				if (j-i <=1) {
+					F[i][j] = s.charAt(i)==s.charAt(j);
+				}
 				else {
 					if (s.charAt(i)==s.charAt(j)){
 						F[i][j] = F[i+1][j-1];
@@ -19,14 +23,6 @@ public class Solution {
 						F[i][j] = false;
 					}
 				}
-				
-			}
-		}
-		// then need find the longest
-		int maxL = 0;
-		int begin = 0;
-		for (int i = 0; i < L; ++i){
-			for (int j = i; j < L; ++j){
 				if (F[i][j] == true){
 					int tmp = j - i + 1;
 					if (tmp > maxL){
@@ -35,8 +31,10 @@ public class Solution {
 						begin = i;
 					}
 				}
+				
 			}
 		}
+
 		return s.substring(begin, begin+maxL);
 	}
 }
