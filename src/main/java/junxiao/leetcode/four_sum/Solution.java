@@ -1,4 +1,4 @@
-package junxiao.leetcode.4sum;
+package junxiao.leetcode.four_sum;
 
 import java.util.*;
 

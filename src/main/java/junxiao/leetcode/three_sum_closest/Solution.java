@@ -1,4 +1,4 @@
-package junxiao.leetcode.3sum_closest;
+package junxiao.leetcode.three_sum_closest;
 
 import java.util.*;
 

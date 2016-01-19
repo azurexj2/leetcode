@@ -1,3 +1,17 @@
+collectin:
+myColection.stream().filter().forEach().collect(Collectors.toList())
+for (Object o : collection)
+    System.out.println(o);
+
+public interface Iterator<E>{
+    bollean hasNext();
+    E next();
+    void remove();
+}
+ for (Iterator<?> it = c.iterator(); it.hasNext();){
+    n = it.next();
+ }
+
 -----------------------------------------------------------------
 HashMap:
 -----------------------------------------------------------------
@@ -10,18 +24,37 @@ remove(K)
 -----------------------------------------------------------------
 
 -----------------------------------------------------------------
-Stack:
+Stack: use Deque instead, stack extent vector, no interface
 -----------------------------------------------------------------
-put(E)
-E pop()
-E peek();
+stack.put(E)
+E stack.pop()
+E stack.peek();
+Deque<Integer> stack_Deq = new ArrayDeque<>();
+stack_Deq.addFirst(E)
+E stack_Deq.removeFirst()
+E stack_Deq.peekFirst()
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 -----------------------------------------------------------------
-list:
+list: (Vector is synchronized, use ArrayList instead)
 -----------------------------------------------------------------
 list.add
+list.remove(list.size()-1)
+list.get(ind)
+list.set(ind, E)
+list.size()
 list<Integer> r = new ArrayList<>(Arrays.asList(1,2,3));
+to copy list: list.stream().collect(Collectors.toList())
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+queue
+-----------------------------------------------------------------
+not throw exception:
+offer(E) add(E)
+E poll() E remove()
+E peek()
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 -----------------------------------------------------------------
@@ -31,7 +64,7 @@ charAt(ind), charAt will check the bound, in c++, operator[]will not check bound
 length()
 substring(begin,end)
 join(" ", str)
-StringBuilder: append, toString
+StringBuilder: append, toString,setLength()
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 
@@ -39,7 +72,9 @@ StringBuilder: append, toString
 Arrays:
 -----------------------------------------------------------------
 Arrays.fill(ary, val)
-Arrays.asList() // transform array to list
+Arrays.asList(arr) // transform array to list
+Arrays.copyOf(arr) //will create a new arr
+System.arrayCopy(src,ind,des,ind,len) //will not create new arr
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 
@@ -47,6 +82,7 @@ Arrays.asList() // transform array to list
 Array:
 -----------------------------------------------------------------
 array.length //not, variable, not function
+array.clone()// create a new array
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 
