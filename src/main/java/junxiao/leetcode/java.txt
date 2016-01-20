@@ -81,6 +81,8 @@ System.arrayCopy(src,ind,des,ind,len) //will not create new arr
 -----------------------------------------------------------------
 Array:
 -----------------------------------------------------------------
+int[] res = new int[10];
+int[] res = {1,2,3}
 array.length //not, variable, not function
 array.clone()// create a new array
 -----------------------------------------------------------------
