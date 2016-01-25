@@ -26,6 +26,21 @@ public class Solution {
 		}
 		
 	}
+	public void dfs(int[] nums, List<List<Integer>> res, int pos){
+		if (pos>=nums.length){
+			List<Integer> tmp = new ArrayList<>();
+			for (int i=0; i < nums.length;++i){
+				tmp.add(nums[i]);
+			}
+			res.add(tmp);
+			return;
+		}
+		for (int i=pos;i<nums.length;++i){
+			swap(nums,i,pos);
+			dfs(nums,res,pos+1);
+			swap(nums,i,pos);
+		}
+	}
 	public void swap(int[] nums, int i, int j){
 		int tmp = nums[i];
 		nums[i] = nums[j];
