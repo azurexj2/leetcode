@@ -11,15 +11,18 @@ public interface Iterator<E>{
  for (Iterator<?> it = c.iterator(); it.hasNext();){
     n = it.next();
  }
+ Collections.sort(List<T> list)
 
 -----------------------------------------------------------------
 HashMap:
 -----------------------------------------------------------------
-get(K)
+get(K), return null if not existed;
 containsKey(K)
 containsValue(V)
 put(K,V)
 remove(K)
+Collection<V> values();// return collection because values may duplicate
+Set<K> keySet();//key is unique
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 
@@ -61,6 +64,9 @@ E peek()
 String
 -----------------------------------------------------------------
 charAt(ind), charAt will check the bound, in c++, operator[]will not check boundary!!
+toCharArray();
+String.valueOf(char[] c).
+how to sort string: char[] c = s.toCharArray(); Arrays.sort(c); String sorted=String.valueOf(c);
 length()
 substring(begin,end)
 join(" ", str)
