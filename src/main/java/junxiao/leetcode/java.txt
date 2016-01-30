@@ -91,6 +91,8 @@ int[] res = new int[10];
 int[] res = {1,2,3}
 array.length //not, variable, not function
 array.clone()// create a new array
+// List<Integer> to int[]
+int[] num = list.stream().mapToInt(i -> i).toArray();
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 
