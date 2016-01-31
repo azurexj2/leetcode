@@ -22,7 +22,7 @@ public class Solution {
 		}
 		return sum[m-1][n-1];
 	}
-	public int minPathSum(int[][] grid){
+	public int minPathSum2(int[][] grid){
 		int m = grid.length;
 		int n = grid[0].length;
 		int[] sum = new int[n];

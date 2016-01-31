@@ -52,12 +52,14 @@ to copy list: list.stream().collect(Collectors.toList())
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 -----------------------------------------------------------------
-queue
+queue   ||last ... ... first||
 -----------------------------------------------------------------
-not throw exception:
-offer(E) add(E)
-E poll() E remove()
-E peek()
+Deque<Integer> queue = new ArrayDeque<>();
+queue.add(E)
+E queue.remove()
+E queue.peek() return null if empty
+arrayDeque better than linkedlist because no memory allocation when
+add new node, linkedlist is better if delete during iteration
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 -----------------------------------------------------------------
@@ -71,6 +73,9 @@ length()
 substring(begin,end)
 join(" ", str)
 StringBuilder: append, toString,setLength()
+String r = new StringBuilder(res).reverse().toString();
+to check equal:
+str.equals(e), str == "e" will only check whether they are the same reference
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 
@@ -93,6 +98,7 @@ array.length //not, variable, not function
 array.clone()// create a new array
 // List<Integer> to int[]
 int[] num = list.stream().mapToInt(i -> i).toArray();
+String[] str = list.stream().toArray(String::new);
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 
@@ -100,6 +106,8 @@ int[] num = list.stream().mapToInt(i -> i).toArray();
 Math
 -----------------------------------------------------------------
 Math.max()
+Math.ceil()
+Math.floor()
 Integer.MIN_VALUE
 -----------------------------------------------------------------
 -----------------------------------------------------------------
