@@ -12,6 +12,7 @@ public interface Iterator<E>{
     n = it.next();
  }
  Collections.sort(List<T> list)
+ Collections.reverse(List)
 
 -----------------------------------------------------------------
 HashMap:
@@ -42,6 +43,7 @@ E stack_Deq.peekFirst()
 list: (Vector is synchronized, use ArrayList instead)
 -----------------------------------------------------------------
 list.add
+list.addAll(list2)
 list.remove(list.size()-1)
 list.get(ind)
 list.set(ind, E)

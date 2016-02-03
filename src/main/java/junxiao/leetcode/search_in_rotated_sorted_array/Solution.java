@@ -24,7 +24,7 @@ public class Solution {
 			}
 			else {
 				//we in right
-				if (target>nums[M] && target<=num[H]){
+				if (target>nums[M] && target<=nums[H]){
 					//in monolic section
 					L = M+1;
 				}
