@@ -78,6 +78,8 @@ StringBuilder: append, toString,setLength()
 String r = new StringBuilder(res).reverse().toString();
 to check equal:
 str.equals(e), str == "e" will only check whether they are the same reference
+// from char to string
+String.valueOf(char)
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 
