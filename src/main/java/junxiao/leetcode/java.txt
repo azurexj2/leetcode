@@ -50,6 +50,7 @@ list.set(ind, E)
 list.size()
 list<Integer> r = new ArrayList<>(Arrays.asList(1,2,3));
 to copy list: list.stream().collect(Collectors.toList())
+list.sublist(begin,end), return VIEW of list[begin,end-1]
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 -----------------------------------------------------------------
