@@ -1,18 +1,16 @@
 package junxiao.leetcode;
-import junxiao.leetcode.combination_sum.Solution;
+import junxiao.leetcode.construct_binary_tree_from_inorder_and_postorder_traversal.*;
 import java.util.*;
+import junxiao.leetcode.TreeNode;
 
 public class runLeetcode {
     public static void main(String[] args){
 // two_sum.Solution s = new two_sum.Solution();
         Solution s = new Solution();
-        int[] num = {1};
-        int target = 1;
+        int[] num1 = {1,2};
+        int[] num2 = {2,1};
         System.out.println("in leet code main:");
-        List<List<Integer>> res = s.combinationSum(num, target);
-        for (List<Integer> l : res){
-        	l.forEach(System.out::println);
-        }
+        TreeNode res = s.buildTree(num1, num2);
         }
 }
 

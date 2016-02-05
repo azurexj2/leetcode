@@ -91,6 +91,7 @@ Arrays.fill(ary, val)
 Arrays.asList(arr) // transform array to list
 Arrays.copyOf(arr) //will create a new arr
 System.arrayCopy(src,ind,des,ind,len) //will not create new arr
+Arrays.copyOfRange(arr,int,end)
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 
