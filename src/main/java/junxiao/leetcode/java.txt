@@ -70,6 +70,9 @@ String
 -----------------------------------------------------------------
 charAt(ind), charAt will check the bound, in c++, operator[]will not check boundary!!
 toCharArray();
+Character.isDigit;
+Character.isLetter;
+Character.isDigitOrLetter;
 String.valueOf(char[] c).
 how to sort string: char[] c = s.toCharArray(); Arrays.sort(c); String sorted=String.valueOf(c);
 length()
