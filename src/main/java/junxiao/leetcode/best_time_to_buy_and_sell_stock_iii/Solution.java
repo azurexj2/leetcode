@@ -20,8 +20,8 @@ public class Solution {
 		}
 		for (int i=len-2;i>=0;--i){
 			int tmp = Math.max(0, highestSoFar - prices[i]); 
-			profitR[i] = Math.max(profitL[i+1], tmp); 
-			highestSoFar = Math.min(highestSoFar, prices[i]);
+			profitR[i] = Math.max(profitR[i+1], tmp); 
+			highestSoFar = Math.max(highestSoFar, prices[i]);
 		}
 		int maxProfit = 0;
 		for (int i=0;i<len;++i){
