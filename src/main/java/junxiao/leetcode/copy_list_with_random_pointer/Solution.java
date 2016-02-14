@@ -17,7 +17,7 @@ public class Solution {
 			if (head.next==null)
 				cloned.next=null;
 			else {
-				RandomListNode next = map.get(head.next);
+				RandomListNode next = map.get(head.next.label);
 				if (next==null){
 					next = new RandomListNode(head.next.label);
 					map.put(head.next.label,next);
@@ -27,13 +27,16 @@ public class Solution {
 			if (head.random==null)
 				cloned.random=null;
 			else{
-				RandomListNode random = map.get(head.random);
+				RandomListNode random = map.get(head.random.label);
 				if (random==null){
 					random = new RandomListNode(head.random.label);
 					map.put(head.random.label,random);
 				}
+				cloned.random = random;
 			}
+			head = head.next;
 		}
+		return newHead;
 		
 	}
 }

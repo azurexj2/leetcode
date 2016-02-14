@@ -1,5 +1,5 @@
 package junxiao.leetcode;
-import junxiao.leetcode.construct_binary_tree_from_inorder_and_postorder_traversal.*;
+import junxiao.leetcode.word_break_ii.*;
 import java.util.*;
 import junxiao.leetcode.TreeNode;
 
@@ -7,10 +7,15 @@ public class runLeetcode {
     public static void main(String[] args){
 // two_sum.Solution s = new two_sum.Solution();
         Solution s = new Solution();
-        int[] num1 = {1,2};
-        int[] num2 = {2,1};
         System.out.println("in leet code main:");
-        TreeNode res = s.buildTree(num1, num2);
+        String str = "catsanddog";
+        Set<String> wordDict = new HashSet<>();
+        wordDict.add("cat");
+        wordDict.add("cats");
+        wordDict.add("and");
+        wordDict.add("sand");
+        wordDict.add("dog");
+        List<String> res = s.wordBreak(str, wordDict);
         }
 }
 
