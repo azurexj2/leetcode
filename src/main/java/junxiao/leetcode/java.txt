@@ -22,6 +22,8 @@ containsKey(K)
 containsValue(V)
 put(K,V)
 remove(K)
+remove by value:
+map.values().remove(removeValue);
 Collection<V> values();// return collection because values may duplicate
 Set<K> keySet();//key is unique
 -----------------------------------------------------------------
@@ -83,7 +85,8 @@ String r = new StringBuilder(res).reverse().toString();
 to check equal:
 str.equals(e), str == "e" will only check whether they are the same reference
 // from char to string
-String.valueOf(char)
+String.valueOf(Object)
+Integer.valueOf(str) str to int
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 
