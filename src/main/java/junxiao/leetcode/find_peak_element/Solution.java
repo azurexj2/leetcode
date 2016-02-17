@@ -13,7 +13,25 @@ public class Solution {
 		int L = 0, H = len-1;
 		while(L<=H){
 			int M = L + (H-L)/2;
-			
+			if (nums[M-1]<nums[M] && nums[M+1]<nums[M])
+				return nums[M];
+			else if (nums[M-1]<nums[M] && nums[M]<nums[M+1]){
+				L = M+1;
+			}
+			else {
+				H = M+1;
+			}
 		}
+	}
+	public int findPeakElement2(int[] nums){
+		int L = 0, H = nums.length -1;
+		while(L<H){
+			int M = L + (H-L)/2;
+			if (nums[M]<nums[M+1])
+				L = M +1;
+			else
+				H = M;
+		}
+		return L;
 	}
 }
