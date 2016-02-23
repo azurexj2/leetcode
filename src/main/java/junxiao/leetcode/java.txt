@@ -129,6 +129,8 @@ Integer.MIN_VALUE
 -----------------------------------------------------------------
 Misc
 -----------------------------------------------------------------
+Random random = new Random();
+random.nextInt(n); return [0,n);
 cast: (int) long_val;
 >> sign shift
 >>> unsign shift
