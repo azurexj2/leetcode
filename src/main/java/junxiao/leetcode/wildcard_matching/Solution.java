@@ -19,10 +19,21 @@ public class Solution {
 		}
 		for (int i = 1; i<=lenS;++i){
 			for (int j = 1; j <=lenP; ++j){
+				int charS = s.charAt(i-1);
+				int charP = p.charAt(j-1);
+				if (charP==charS || charP=='?'){
+					matched[i][j] = matched[i-1][j-1];
+				}
+				else if (charP == '*'){
+					//"*" matches:
+					//1. ""
+					//2. "x"
+					//3. "xx..."
+                    matched[i][j] = matched[i][j-1] || matched[i-1][j-1] || matched[i-1][j];
+				}
 				
 			}
 		}
-		
 		return matched[lenS][lenP];
 	}
 }
