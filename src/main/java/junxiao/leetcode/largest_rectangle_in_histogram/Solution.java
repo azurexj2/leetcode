@@ -32,11 +32,15 @@ public class Solution {
 		}
 		stack.addFirst(0);
 		for (int i = 1; i <len+2;++i){
-			while(){
+			while(arr[stack.peekFirst()]> arr[i]){
 				//pop out all out of order 
+				int ind = stack.removeFirst();
+				int high = arr[ind];
+				int l = i-1 - (stack.peekFirst()+1) + 1;
+				size = Math.max(size, high*l);
 			}
 			stack.addFirst(i);
 		}
-
+		return size;
 	}
 }
