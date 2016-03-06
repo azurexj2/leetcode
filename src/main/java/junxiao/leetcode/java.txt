@@ -80,6 +80,7 @@ how to sort string: char[] c = s.toCharArray(); Arrays.sort(c); String sorted=St
 length()
 substring(begin,end)
 join(" ", str)
+str.split(" ")
 StringBuilder: append, toString,setLength()
 String r = new StringBuilder(res).reverse().toString();
 to check equal:
@@ -95,7 +96,7 @@ Arrays:
 -----------------------------------------------------------------
 Arrays.fill(ary, val)
 Arrays.asList(arr) // transform array to list
-Arrays.copyOf(arr) //will create a new arr
+Arrays.copyOf(arr,len) //will create a new arr
 System.arrayCopy(src,ind,des,ind,len) //will not create new arr
 Arrays.copyOfRange(arr,int,end)
 -----------------------------------------------------------------
