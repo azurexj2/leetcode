@@ -1,14 +1,13 @@
 package junxiao.leetcode;
 import java.util.*;
-import junxiao.leetcode.implement_trie_prefix_tree.*;
+import junxiao.leetcode.longest_increasing_subsequence.*;
 
 public class runLeetcode {
     public static void main(String[] args){
 // two_sum.Solution s = new two_sum.Solution();
-    	Trie trie = new Trie();
-    	trie.insert("ab");
-    	boolean res = trie.search("a");
-    	res = trie.startsWith("a");
+    	Solution s = new Solution();
+    	int[] nums = {1,3,6,7,9,4,10,5,6};
+    	int res = s.lengthOfLIS(nums);
         }
 }
 
