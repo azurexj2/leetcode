@@ -36,8 +36,8 @@ stack.put(E)
 E stack.pop()
 E stack.peek();
 Deque<Integer> stack_Deq = new ArrayDeque<>();
-stack_Deq.addFirst(E)
-E stack_Deq.removeFirst()
+stack_Deq.offerFirst(E)
+E stack_Deq.pollFirst()
 E stack_Deq.peekFirst()
 -----------------------------------------------------------------
 -----------------------------------------------------------------
@@ -65,8 +65,8 @@ all place with Comparator can use collections.reverseOrder()
 queue   ||last ... ... first||
 -----------------------------------------------------------------
 Deque<Integer> queue = new ArrayDeque<>();
-queue.add(E)
-E queue.remove()
+queue.offer(E)
+E queue.poll()
 E queue.peek() return null if empty
 arrayDeque better than linkedlist because no memory allocation when
 add new node, linkedlist is better if delete during iteration
