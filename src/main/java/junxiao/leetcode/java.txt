@@ -52,6 +52,7 @@ list.set(ind, E)
 list.size()
 list<String> r = Arrays.asList("a","b");
 list<Integer> r = new ArrayList<>(Arrays.asList(1,2,3));
+string.setText("") will clean the string
 to copy list: list.stream().collect(Collectors.toList())
 list.sublist(begin,end), return VIEW of list[begin,end-1]
 list.sort(Comparator);
