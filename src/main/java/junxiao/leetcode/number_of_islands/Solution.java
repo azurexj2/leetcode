@@ -59,3 +59,62 @@ public class Solution {
 		}
 	}
 }
+// union find
+public class Solution2 {
+    private int[][] d = new int[][]{{1,0},{-1,0},{0,1},{0,-1}};
+    public int numIslands(char[][] grid) {
+        int m = grid.length;
+        if (m==0) return 0;
+        int n = grid[0].length;
+        Union union = new Union(grid);
+        for (int i=0; i < m; ++i){
+            for (int j =0; j <n; ++j){
+                int ind = i*n +j;
+                if (grid[i][j]=='1'){
+                    for (int[] dir : d){
+                        int x = i + dir[0];
+                        int y = j + dir[1];
+                        if (x>=0 && x<m && y>=0 && y<n && grid[x][y]=='1'){
+                            union.combine(ind, x*n+y);
+                        }
+                    }
+                }
+            }
+        }
+        return union.count;
+    }
+    public class Union{
+        public int[] father;
+        public int count;
+        public Union(char[][] grid){
+            int m = grid.length;
+            int n = grid[0].length;
+            father = new int[m*n];
+            count = 0;
+            for (int i = 0; i<m; ++i){
+                for (int j = 0; j < n; ++j){
+                    if (grid[i][j]=='1'){
+                        int ind = i*n + j;
+                        father[ind] = ind;
+                        ++count;
+                    }
+                }
+            }
+        }
+        public void combine(int p, int q){
+            int i = root(p);
+            int j = root(q);
+            if (i!=j){
+                father[i] = j;
+                --count;
+            }
+        }
+        public int root(int p){
+            while(father[p]!=p){
+                //father[p] = father[father[p]];
+                p = father[p];
+            }
+            return p;
+        }
+    }
+}
