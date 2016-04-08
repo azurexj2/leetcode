@@ -28,7 +28,17 @@ Collection<V> values();// return collection because values may duplicate
 Set<K> keySet();//key is unique
 -----------------------------------------------------------------
 -----------------------------------------------------------------
-
+-----------------------------------------------------------------
+TreeSet:
+-----------------------------------------------------------------
+E treeset.ceiling(E e) return leatest x>=e
+E treeset.floor(E e) return largest x<=e
+E treeset.first()
+E treeset.last()
+SortedSet<E> headSet(E e, exculsive=false) Returns a view of the portion of this set whose elements are strictly less than toElement.
+SortedSet<E> tailSet(E e, exculsive=false) Returns a view of the portion of this set whose elements are strictly larger than toElement.
+-----------------------------------------------------------------
+-----------------------------------------------------------------
 -----------------------------------------------------------------
 Stack: use Deque instead, stack extent vector, no interface
 -----------------------------------------------------------------
