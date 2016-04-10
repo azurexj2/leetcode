@@ -97,7 +97,7 @@ length()
 substring(begin,end)
 join(" ", str)
 str.split(" ")
-StringBuilder: append, toString,setLength()
+StringBuilder: append, toString,setLength(), deleteCharAt(i)
 String r = new StringBuilder(res).reverse().toString();
 to check equal:
 str.equals(e), str == "e" will only check whether they are the same reference
