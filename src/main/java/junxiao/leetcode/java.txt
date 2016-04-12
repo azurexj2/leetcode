@@ -167,3 +167,12 @@ cast: (int) long_val;
 
 -----------------------------------------------------------------
 
+think about algorithm:
+dp,
+recursion,
+bfs/dfs,
+stack/queue/heap
+divide conqer
+sweep line
+union
+finit state machine
