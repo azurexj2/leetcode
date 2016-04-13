@@ -7,6 +7,24 @@ public class Solution {
         if (n==1) return 1;
         int[] uglyNum = new int[n];
         uglyNum[0]=1;
+        int ind2=0, ind3=0, ind5=0;
+        for (int i =1; i <n;++i){
+            int minOfThree = Math.min(Math.min(uglyNum[ind2]*2,uglyNum[ind3]*3),uglyNum[ind5]*5);
+            uglyNum[i] = minOfThree;
+            if (minOfThree%2==0) ++ind2;
+            if (minOfThree%3==0) ++ind3;
+            if (minOfThree%5==0) ++ind5;
+        }
+        return uglyNum[n-1];
+        
+    }
+}
+
+public class Solution2 {
+    public int nthUglyNumber(int n) {
+        if (n==1) return 1;
+        int[] uglyNum = new int[n];
+        uglyNum[0]=1;
         int[] m2 = new int[n];
         m2[0]=2;
         int[] m3 = new int[n];
