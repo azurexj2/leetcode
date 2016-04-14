@@ -12,6 +12,20 @@ import java.util.*;
  * }
  */
 public class Solution {
+    public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
+        if (root==null) return null;
+        if (root.val<=p.val)
+            return inorderSuccessor(root.right, p);
+        else {
+            TreeNode left = inorderSuccessor(root.left,p);
+            if (left==null)
+                return root;
+            else 
+                return left;
+        }
+    }
+}
+public class Solution2 {
     Deque<TreeNode> stack = new ArrayDeque<>();
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
         //case 1, if p.val == root.val, in the right, the smallest
