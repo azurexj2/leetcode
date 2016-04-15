@@ -1,4 +1,4 @@
-collectin:
+cllectin:
 myColection.stream().filter().forEach().collect(Collectors.toList())
 for (Object o : collection)
     System.out.println(o);
@@ -104,6 +104,10 @@ str.equals(e), str == "e" will only check whether they are the same reference
 // from char to string
 String.valueOf(Object)
 Integer.valueOf(str) str to int
+
+str.replace(c1,c2)
+//if want to delete all c,
+str.replaceAll(""+c,"")
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 
@@ -176,3 +180,5 @@ divide conqer
 sweep line
 union
 finit state machine
+greedy
+tree: bottom up
