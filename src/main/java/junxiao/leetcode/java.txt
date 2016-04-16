@@ -108,6 +108,8 @@ Integer.valueOf(str) str to int
 str.replace(c1,c2)
 //if want to delete all c,
 str.replaceAll(""+c,"")
+//to get "0005"
+str = String.format("%4d", 5)
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 
