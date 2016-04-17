@@ -169,6 +169,9 @@ random.nextInt(n); return [0,n);
 cast: (int) long_val;
 >> sign shift
 >>> unsign shift
+BigInteger num1 num2
+num3 = num2.add(num1)
+BigDecimal :: control precion of double computation
 -----------------------------------------------------------------
 
 -----------------------------------------------------------------
@@ -184,3 +187,7 @@ union
 finit state machine
 greedy
 tree: bottom up
+//design
+mapreduce sparse matrix
+app store
+netfix recomend system
