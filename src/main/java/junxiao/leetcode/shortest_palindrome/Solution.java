@@ -1,8 +1,42 @@
 package junxiao.leetcode.shortest_palindrome;
 
 import java.util.*;
-
 public class Solution {
+    public String shortestPalindrome(String s) {
+        /*
+        for a string, e.g. abacd, add"#" and append reverse of it
+        ==>  abacd#dcaba@
+        then the problem become find out the max prefix match suffix
+        ==> KMP next table
+        */
+        StringBuilder rev = new StringBuilder(s);
+        String str = s +"#" + rev.reverse().toString() + "@";
+        int len = str.length();
+        int[] next = new int[len];
+        int prefix=0, suffix=2;
+        while(suffix<len){
+            if (str.charAt(prefix)==str.charAt(suffix-1)){
+                ++prefix;
+                next[suffix] = prefix;
+                ++suffix;
+            }
+            else if (prefix>0){
+                prefix=next[prefix];
+            }
+            else {
+                //prefix==0
+                next[suffix]=0;
+                ++suffix;
+            }
+        }
+        
+        int d = next[len-1];
+        StringBuilder target = new StringBuilder(s.substring(d));
+        return target.reverse().toString() + s;
+        
+    }
+}
+public class Solution2 {
     public String shortestPalindrome(String s) {
         int len =s.length();
         if (len<=1) return s;
