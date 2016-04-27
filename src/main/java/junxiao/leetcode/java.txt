@@ -1,4 +1,4 @@
-cllectin:
+colliction:
 myColection.stream().filter().forEach().collect(Collectors.toList())
 for (Object o : collection)
     System.out.println(o);
