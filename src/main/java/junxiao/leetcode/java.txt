@@ -1,3 +1,5 @@
+java -cp xxx.jar path_to_main_class
+
 cllectin:
 myColection.stream().filter().forEach().collect(Collectors.toList())
 for (Object o : collection)
@@ -26,6 +28,8 @@ remove by value:
 map.values().remove(removeValue);
 Collection<V> values();// return collection because values may duplicate
 Set<K> keySet();//key is unique
+Map.Entry<K,V> e : map.entrySet();
+use map.put(k, map.getOrDefault(k,0) + 1);
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 -----------------------------------------------------------------
@@ -98,6 +102,7 @@ substring(begin,end)
 join(" ", str)
 str.split(" ")
 StringBuilder: append, toString,setLength(), deleteCharAt(i)
+stringbuilder: setCharAt(i,c)
 String r = new StringBuilder(res).reverse().toString();
 to check equal:
 str.equals(e), str == "e" will only check whether they are the same reference
@@ -110,6 +115,7 @@ str.replace(c1,c2)
 str.replaceAll(""+c,"")
 //to get "0005"
 str = String.format("%4d", 5)
+str.indexOf(c) if not found return -1
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 
@@ -132,6 +138,7 @@ Arrays.copyOfRange(arr,int,end)
 	}
     Arrays.sort(str, Collections.reverseOrder());
     Arrays.sort(str, (a,b)->b-a);
+                Integer.compare(b,a);
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 
@@ -173,11 +180,19 @@ BigInteger num1 num2
 num3 = num2.add(num1)
 BigDecimal :: control precion of double computation
 -----------------------------------------------------------------
+-----------------------------------------------------------------
+java file action
+try(BufferedReader br = new BufferedReader(new FileReader(file)){
+    String line;
+    while((line=br.readLine())!=null){
+        System.out.println(line);
+    }
+}
 
 -----------------------------------------------------------------
 
 think about algorithm:
-dp,
+dp, sub-optimal structure && overlapping solution
 recursion,
 bfs/dfs,
 stack/queue/heap
@@ -191,3 +206,6 @@ tree: bottom up
 mapreduce sparse matrix
 app store
 netfix recomend system
+design rate limiter
+design JIRA
+design healthmointor system

@@ -2,8 +2,47 @@ package junxiao.leetcode.count_of_smaller_numbers_after_self;
 
 import java.util.*;
 
-
 public class Solution {
+    public List<Integer> countSmaller(int[] nums) {
+        //BIT
+        int len = nums.length;
+        int MIN = Integer.MAX_VALUE;
+        for (int n : nums){
+            MIN = Math.min(MIN,n);
+        }
+        int[] nums2 = new int[len];
+        int MAX = Integer.MIN_VALUE;
+        for (int i =0; i <len;++i){
+            nums2[i] = nums[i] - MIN;
+            MAX = Math.max(MAX,nums2[i]);
+        }
+        int[] BIT = new int[MAX+2]; // MAX+1 slot, one more slot for BIT[0]
+        List<Integer> res = new ArrayList<>();
+        for (int i = len-1; i>=0; ++i){
+            res.add(getVal(nums2[i]-1,BIT));//ind of nums[i] is nums[i], we need smaller, then get nums2[i] -1
+            update(nums2[i],BIT);
+        }
+        Collections.reverse(res);
+        return res;
+    }
+    private int getVal(int ind, int[] BIT){
+        ++ind; // count for dummy BIT[0]
+        int sum = 0;
+        while(ind>0){
+            sum += BIT[ind];
+            ind -= (ind & -ind);
+        }
+        return sum;
+    }
+    private void update(int ind, int[] BIT){
+        ++ind;
+        while(ind <= BIT.length){
+            BIT[ind]++;
+            ind += (ind & -ind);
+        }
+    }
+}
+public class Solution22 {
     private class numInd {
         int ind;
         int val;
