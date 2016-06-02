@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 java -cp xxx.jar path_to_main_class
 
 cllectin:
+=======
+colliction:
+>>>>>>> d24721cd1cc23f0176bfb88400a7e993c65de282
 myColection.stream().filter().forEach().collect(Collectors.toList())
 for (Object o : collection)
     System.out.println(o);
