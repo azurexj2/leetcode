@@ -32,6 +32,11 @@ Map.Entry<K,V> e : map.entrySet();
 use map.put(k, map.getOrDefault(k,0) + 1);
 -----------------------------------------------------------------
 -----------------------------------------------------------------
+TreeMap
+E ceilingKey(K key)
+E higherKey(K key)
+E floorKey(K key)
+E lowerKey(K key)
 -----------------------------------------------------------------
 TreeSet:
 -----------------------------------------------------------------
@@ -203,6 +208,7 @@ stack/queue/heap
 divide conqer
 sweep line
 //design
+redis, mongoDB,
 mapreduce sparse matrix
 app store
 netfix recomend system
