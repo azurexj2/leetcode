@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 java -cp xxx.jar path_to_main_class
 
 cllectin:
-=======
-colliction:
->>>>>>> d24721cd1cc23f0176bfb88400a7e993c65de282
 myColection.stream().filter().forEach().collect(Collectors.toList())
 for (Object o : collection)
     System.out.println(o);
@@ -89,6 +85,10 @@ E queue.poll()
 E queue.peek() return null if empty
 arrayDeque better than linkedlist because no memory allocation when
 add new node, linkedlist is better if delete during iteration
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+String
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 -----------------------------------------------------------------
@@ -202,10 +202,6 @@ bfs/dfs,
 stack/queue/heap
 divide conqer
 sweep line
-union
-finit state machine
-greedy
-tree: bottom up
 //design
 mapreduce sparse matrix
 app store
