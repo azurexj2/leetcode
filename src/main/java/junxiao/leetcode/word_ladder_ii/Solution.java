@@ -6,8 +6,84 @@ import com.sun.corba.se.spi.activation._ActivatorImplBase;
 import com.sun.security.auth.NTDomainPrincipal;
 
 import sun.util.resources.hr.CalendarData_hr;
-
 public class Solution {
+    public List<List<String>> findLadders(String beginWord, String endWord, Set<String> wordList) {
+        Set<String> forward = new HashSet<>();
+        Set<String> backward = new HashSet<>();
+        Set<String> visited = new HashSet<>();
+        Map<String,List<String>> path = new HashMap<>();
+        forward.add(beginWord);
+        backward.add(endWord);
+        boolean found = false;
+        boolean swaped = false;
+        while(!forward.isEmpty() && !backward.isEmpty() && !found){
+            if (forward.size() > backward.size()){
+                Set<String> tmp = forward;
+                forward = backward;
+                backward = tmp;
+                swaped = !swaped;
+            }
+            
+            Set<String> cur = new HashSet<>();
+            for(String s : forward){
+                char[] sArr = s.toCharArray();
+                for (int i =0; i <beginWord.length();++i){
+                    for (char c='a';c<='z';++c){
+                        if (sArr[i]==c) continue;
+                        char old = sArr[i];
+                        sArr[i] = c;
+                        String newStr = String.valueOf(sArr);
+                        sArr[i] = old;
+                        if (backward.contains(newStr)){
+                            found = true;
+                        }
+                        // we need consider the new string added in current level 
+                        if (wordList.contains(newStr) && (!visited.contains(newStr) || cur.contains(newStr))){
+                            cur.add(newStr);
+                            visited.add(newStr);
+                            String key = s;
+                            String value = newStr;
+                            if (swaped){
+                                key = newStr;
+                                value = s;
+                            }
+                            
+                            if (!path.containsKey(key)){
+                                path.put(key, new ArrayList<String>());
+                            }
+                            path.get(key).add(value);
+                        }
+                        
+                    }
+                }
+            }
+            
+            forward = cur;
+            
+        }
+        
+        // now path contains the rout from end word to begin word
+        List<List<String>> res = new ArrayList<>();
+        dfs(res,path,new ArrayList<String>(), beginWord, endWord);
+        return res;
+        
+    }
+    private void dfs(List<List<String>> res, Map<String,List<String>> path, List<String> route, String curWord, String endWord){
+        if (curWord.equals(endWord)){
+            List<String> tmp = new ArrayList<>(route);
+            res.add(tmp);
+            return;
+        }
+        if (!path.containsKey(curWord))
+            return;
+        for (String s : path.get(curWord)){
+            route.add(s);
+            dfs(res,path,route,s,endWord);
+            route.remove(route.size()-1);
+        }
+    }
+}
+public class Solution2 {
 	public List<List<String>> findLadders(String beginWord, String endWord, Set<String> wordList){
 		List<List<String>> res = new ArrayList<>();
 		Map<String, List<String>> father = new HashMap<>();

@@ -3,6 +3,42 @@ package junxiao.leetcode.course_schedule;
 import java.util.*;
 
 public class Solution {
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        int[] inDegree = new int[numCourses];
+        Map<Integer, List<Integer>> graph  = new HashMap<>();
+        for (int[] edge : prerequisites){
+            int course = edge[0];
+            int preReq = edge[1];
+            if (!graph.containsKey(preReq)){
+                graph.put(preReq,new ArrayList<Integer>());
+            }
+            graph.get(preReq).add(course);
+            inDegree[course]++;
+        }
+        Deque<Integer> queue = new ArrayDeque<>();
+        int count = numCourses;
+        for (int n : inDegree){
+            if (n==0){
+                queue.offer(n);
+                --count;
+            }
+        }
+        while(!queue.isEmpty()){
+            int course = queue.poll();
+            if (!graph.containsKey(course)) continue;
+            for (int m : graph.get(course)){
+                --inDegree[m];
+                if (inDegree[m] == 0){
+                    queue.offer(m);
+                    --count;
+                }
+            }
+        }
+        return count==0;
+        
+    }
+}
+public class Solution2 {
 	public boolean canFinish(int numCourses, int[][] prerequisites){
 		if (numCourses<=1) return true;
 		if (prerequisites.length<=1) return true;

@@ -2,9 +2,107 @@ package junxiao.leetcode.number_of_islands;
 
 import java.util.*;
 
-import com.sun.crypto.provider.BlowfishCipher;
-
 public class Solution {
+    private final static int[][] dir = new int[][]{{1,0},{-1,0},{0,1},{0,-1}};
+    public int numIslands(char[][] grid) {
+        int count = 0;
+        int m = grid.length;
+        if (m ==0) return 0;
+        int n = grid[0].length;
+        boolean[][] visited = new boolean[m][n];
+        UF union = new UF(grid);
+        for (int i =0; i <m;++i){
+            for (int j =0; j<n;++j){
+                if (grid[i][j]=='1' && !visited[i][j]){
+                    //dfs(grid, i, j, visited);
+                    //bfs(grid,i,j,visited);
+                    //++count;
+                    union.combin(i,j);
+                }
+            }
+        }
+        //return count;
+        return union.count;
+    }
+    class UF {
+        private int[] root;
+        public int count = 0;
+        int m;
+        int n;
+        char[][] g;
+        public UF(char[][] grid){
+            g = grid;
+            m = grid.length;
+            n = grid[0].length;
+            root = new int[m*n];
+            for (int i =0; i <m;++i){
+                for (int j =0; j<n;++j){
+                   if (grid[i][j]=='1'){
+                       ++count;
+                       root[i*n+j] = i*n+j;
+                   } 
+                }
+            }
+        }
+        public void combin(int i, int j){
+            // only need check right and down
+            //int root1 = findRoot(i, j);
+            int[][] dd = new int[][]{{1,0},{0,1}};
+            int[][] dir = new int[][]{{1,0},{-1,0},{0,1},{0,-1}};
+            for (int[] d : dir){
+                int x = i + d[0];
+                int y = j + d[1];
+                if (x>=0 && y>=0 && x<m && y<n && g[x][y]=='1'){
+                    int root1 = findRoot(i, j);
+                    int root2 = findRoot(x,y);
+                    if (root1!=root2){
+                        --count;
+                        root[x*n+y] = root1;
+                    }
+                }
+            }
+        }
+        private int findRoot(int i, int j){
+            int p = i*n+j;
+            while(p!=root[p]){
+                root[p] = root[root[p]];
+                p = root[p];
+            }
+            return p;
+        }
+    }
+    private void bfs(char[][] grid, int i, int j, boolean[][] visited){
+        visited[i][j] = true;
+        int m = grid.length;
+        int n = grid[0].length;
+        Deque<Integer> queue = new ArrayDeque<>();
+        queue.offer(i*n+j);
+        while(!queue.isEmpty()){
+            int ind = queue.poll();
+            for (int[] d : dir){
+                int x = ind/n + d[0];
+                int y = ind%n + d[1];
+                if (x>=0 && x < grid.length && y >=0 && y<grid[0].length && grid[x][y]=='1' && !visited[x][y]){
+                    visited[x][y] = true;
+                    queue.offer(x*n+y);
+                }
+            }
+        }
+    }
+    private void dfs(char[][] grid, int i, int j, boolean[][] visited){
+        visited[i][j] = true;
+        for (int[] d : dir){
+            int x = i + d[0];
+            int y = j + d[1];
+            if (x>=0 && x < grid.length && y >=0 && y<grid[0].length && grid[x][y]=='1' && !visited[x][y]){
+                dfs(grid,x,y,visited);
+            }
+        }
+    }
+}
+
+
+public class Solution3 {
 	public int numIslands(char[][] grid){
 		int count = 0;
 		int m = grid.length;
